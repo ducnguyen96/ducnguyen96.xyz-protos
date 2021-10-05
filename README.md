@@ -46,3 +46,14 @@ protoc --experimental_allow_proto3_optional \
   --go-grpc_opt=paths=import \
   --proto_path=. ./protos/**/*.proto ./protos/*.proto
 ```
+
+## 5. Publish
+```shell
+git tag v1.0.4
+git push origin v1.0.4
+```
+
+## 6. Get latest
+```shell
+go get -x github.com/ducnguyen96/ducnguyen96.xyz-protos@latest
+```
