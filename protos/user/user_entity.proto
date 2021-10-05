@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package protogen;
+option go_package = "protogen/v1";
+
+message UserEntity {
+  uint64 id = 1;
+  string username = 2;
+  string avatar = 3;
+  bool remind_me = 4;
+  string wake_up_time = 5;
+  string sleep_time = 6;
+  Gender gender = 7;
+  float weight = 8;
+  int32 daily_intake = 9;
+  string container_image = 10;
+  string container_volume = 11;
+  int32 drink_at_a_time = 12;
+  string created_at = 13;
+  string updated_at = 14;
+}
+
+enum Gender {
+  MALE = 0;
+  FEMALE = 1;
+}

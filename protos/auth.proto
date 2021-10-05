@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+import "protos/user/user_entity.proto";
+
+package protogen;
+option go_package = "protogen/v1";
+
+service AuthService {
+  rpc Register (UserRegisterInput) returns (RegisterPayload) {}
+  rpc Login (UserLoginInput) returns (TokenPayloadDto) {}
+}
+
+message UserRegisterInput {
+  string username = 1;
+  string password = 2;
+  string repeatPassword = 3;
+}
+
+message  UserLoginInput {
+  string username = 1;
+  string password = 2;
+}
+
+message RegisterPayload {
+  optional UserEntity user = 1;
+  optional TokenPayloadDto token = 2;
+}
+
+message TokenPayloadDto {
+  optional int32 expiresIn = 1;
+  optional string accessToken = 2;
+}
