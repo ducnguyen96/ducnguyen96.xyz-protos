@@ -14,7 +14,7 @@ message UserEntity {
   float weight = 8;
   int32 daily_intake = 9;
   string container_image = 10;
-  string container_volume = 11;
+  int32 container_volume = 11;
   int32 drink_at_a_time = 12;
   string created_at = 13;
   string updated_at = 14;
